@@ -7,11 +7,12 @@
     <title>Primer ejercicio</title>
 </head>
 <body>
-    <div class="container-lg">
+    <div class="container-lg ">
         <center><h1 class="display-3">Formulario</h1></center>
         <div class="row">
+            <div class=col></div>
             <div id="form" class="col-8">
-                <form action="" method="post">
+                <form action="main.php" method="post">
                     <div class="input-group mb-3">
                         <span class="input-group-text"><label for="id_nombre">Nombre</label></span>
                         <input type="text" name="nombre" id="id_nombre" class="form-control">
@@ -25,15 +26,22 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text"><label for="id_email">Email</label></span><input type="text" name="email" class="form-control" id="id_email">                    
                     </div>
-                    <div class="input-group">
-                        <span class="input-group-text"><label for="id_numero">Numero</label></span><input type="number" name="numero" class="form-control" id="id_numero">                    
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><label for="id_numero">Telefono</label></span><input type="number" name="telefono" class="form-control" id="id_numero">                    
+                    </div>
+                    <div class="container text-center mb-3">
+                        <button type="submit" name="btn1" class="btn btn-success">Enviar</button>
+                        <button type="submit" name="btn2" class="btn btn-primary">Consultar</button>
                     </div>
                 </form>
+                <?php
+                    include("registro.php");
+                ?> 
             </div>
-            <div id="req" class="col">
-            </div>
-        </div> 
+            <div class=col></div>
+        </div>
     </div>
+    
 </body>
 
 <style>
@@ -41,9 +49,22 @@
         width: 80px;
     }
 
-    .col,.col-8{
-        border: 1px solid black;
+    table{
+        border: 1px solid green;
     }
+
+    td{
+       width: 25%;
+        border: 1px solid red;
+    }
+
+    /*.row{
+        border: 1px solid red;
+    }
+
+    .container,.container-lg{
+        border: 1px solid orange
+    }*/
 
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
@@ -55,6 +76,5 @@
     input[type=number] {
     -moz-appearance: textfield;
     }    
-
 </style>
 </html>
