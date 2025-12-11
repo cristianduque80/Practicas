@@ -48,9 +48,7 @@
     span{
         width: 80px;
     }
-    td{
-        border: 2px solid green;
-    }
+
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
     -webkit-appearance: none;

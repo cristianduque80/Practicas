@@ -70,8 +70,8 @@
             $consulta=mysqli_query($conex,"SELECT * FROM $table WHERE cedula=$cedula");
             while($dato_consultado=mysqli_fetch_array($consulta)){
                 echo "
-                <table>
-                    <tr>
+                <table class=\"table-bordered\">
+                    <tr >
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Email</th>
