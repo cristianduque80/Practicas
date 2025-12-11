@@ -20,10 +20,11 @@
                         <span class="input-group-text"><label for="id_apellido">Apellido</label></span>
                         <input type="text" name="apellido" id="id_apellido" class="form-control">
                     </div>
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-0">
                         <span class="input-group-text"><label for="id_cedula">Cedula</label></span><input type="number" name="cedula" class="form-control" id="id_cedula">
                     </div>
-                    <div class="input-group mb-3">
+                    <div class="form-text mb-3 mt-0">Para la consulta unicamente rellene este campo</div>
+                    <div class="input-group mb-3 mt-0">
                         <span class="input-group-text"><label for="id_email">Email</label></span><input type="text" name="email" class="form-control" id="id_email">                    
                     </div>
                     <div class="input-group mb-3">
