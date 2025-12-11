@@ -60,7 +60,7 @@
                     <tr>
                         <td width=\"15%\">".$dato_consultado['nombre']."</td>
                         <td width=\"15%\">".$dato_consultado['apellido']."</td>
-                        <td width=\"35%\">".$dato_consultado['email']."</td>
+                        <td width=\"53%\">".$dato_consultado['email']."</td>
                         <td>".$dato_consultado['telefono']."</td>
                     </tr>
                 </table>";
