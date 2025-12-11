@@ -50,7 +50,7 @@
             $consulta=mysqli_query($conex,"SELECT * FROM $table");
             while($dato_consultado=mysqli_fetch_array($consulta)){
                 echo "
-                <table class=\"table text-center\">
+                <table class=\"table mb-0\">
                     <tr>
                         <th>Nombre</th>
                         <th>Apellido</th>
@@ -58,9 +58,9 @@
                         <th>Telefono</th>
                     </tr>
                     <tr>
-                        <td>".$dato_consultado['nombre']."</td>
-                        <td>".$dato_consultado['apellido']."</td>
-                        <td>".$dato_consultado['email']."</td>
+                        <td width=\"15%\">".$dato_consultado['nombre']."</td>
+                        <td width=\"15%\">".$dato_consultado['apellido']."</td>
+                        <td width=\"35%\">".$dato_consultado['email']."</td>
                         <td>".$dato_consultado['telefono']."</td>
                     </tr>
                 </table>";
@@ -70,7 +70,7 @@
             $consulta=mysqli_query($conex,"SELECT * FROM $table WHERE cedula=$cedula");
             while($dato_consultado=mysqli_fetch_array($consulta)){
                 echo "
-                <table class=\"table \">
+                <table>
                     <tr>
                         <th>Nombre</th>
                         <th>Apellido</th>

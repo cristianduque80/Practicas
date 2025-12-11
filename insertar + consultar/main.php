@@ -48,24 +48,7 @@
     span{
         width: 80px;
     }
-
-    table{
-        border: 1px solid green;
-    }
-
-    td{
-       width: 25%;
-        border: 1px solid red;
-    }
-
-    /*.row{
-        border: 1px solid red;
-    }
-
-    .container,.container-lg{
-        border: 1px solid orange
-    }*/
-
+    
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
     -webkit-appearance: none;
