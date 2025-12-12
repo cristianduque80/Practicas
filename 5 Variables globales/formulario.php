@@ -7,6 +7,8 @@
     <title>Fomulario</title>
 </head>
 <body>
+    
+
     <div class="container-lg ">
         <center><h1 class="display-3">Formulario</h1></center>
         <div class="row">
@@ -30,14 +32,12 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text"><label for="id_numero">Telefono</label></span><input type="number" name="telefono" class="form-control" id="id_numero">                    
                     </div>
-                    <div class="container text-center mb-3">
+                    <div class="container text-center mb-2">
                         <button type="submit" name="btn2" class="btn btn-success">Enviar</button>
                         <button type="submit" name="btn3" class="btn btn-primary">Consultar</button> 
+                        <button type="submit" name="btn4" class="btn btn-danger">Regresar</button>
                     </div>
                 </form>
-                <div class="container text-center mb-3">
-                    <a href="sesion.php"><button type="submit" name="" class="btn btn-primary">Regresar</button></a>
-                </div>
                 <?php
                     include("registro.php");
                 ?> 

@@ -1,10 +1,11 @@
 <?php
     //Conexion db
     include("conexion_db.php");
+
     //1.-Funcion de incersion de datos
     if(isset($_POST['btn2'])){
         //Comprobacion de los campos (inputs)
-        if(strlen($_POST['nombre'])<=0 && strlen($_POST['apellido'])<=0 && strlen($_POST['cedula'])<=0 && strlen($_POST['email'])<=0 && strlen($_POST['telefono'])<=0){
+        if(strlen($_POST['nombre'])<=0 || strlen($_POST['apellido'])<=0 || strlen($_POST['cedula'])<=0 || strlen($_POST['email'])<=0 || strlen($_POST['telefono'])<=0){
             echo "
                 <div class=\"container-lg text-center\" style=\"\">   
                     ---Rellene los campos faltantes---                       
@@ -64,10 +65,10 @@
                         <td>".$dato_consultado['telefono']."</td>
                     </tr>
                 </table>";
-        }    
+            }include("cerrar_conexion_db.php");    
         }else{
             $cedula=$_POST['cedula'];
-            $consulta=mysqli_query($conex,"SELECT * FROM $table WHERE cedula=$cedula");
+            $consulta=mysqli_query($conex,"SELECT * FROM $table WHERE cedula='$cedula'");
             while($dato_consultado=mysqli_fetch_array($consulta)){
                 echo "
                 <table class=\"table\">
@@ -84,6 +85,13 @@
                         <td>".$dato_consultado['telefono']."</td>
                     </tr>
                 </table>";
-            }    
+            }include("cerrar_conexion_db.php");    
+        }
     }
-}
+
+    //3.- Funcion para volver al inicio de sesion
+    if(isset($_POST['btn4'])){
+        header("location:sesion.php");
+    }
+
+

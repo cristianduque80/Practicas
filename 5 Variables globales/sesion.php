@@ -8,18 +8,31 @@
     <title>Registro</title>
 </head>
 <body>
+<?php
+        session_start();
+        ob_start();
+        if($_SESSION['sesion_estado']==2){
+            echo"
+            <script>alert('Rellene los campos solicitados');</script>
+            ";
+        }else if($_SESSION['sesion_estado']==3){
+            echo "
+            <script>alert('Usted no se encuentra registrado');</script>
+            ";
+        }
+    ?>
 <div class="main">
     <div class="formulario">
         <img src="img\SERVIDUROC CA.png" alt="">
         <div class="Inputs ps-3 pe-3">
-            <form method="post" action="formulario.php">
+            <form method="post" action="validacion_sesion.php">
                 <div class="input-group mb-3">
                     <span class="input-group-text"><label for="id_nombre">Nombre:</label></span>
-                    <input class="form-control" type="text" name="nombre" id="id_nombre">
+                    <input class="form-control" type="text" name="user_sesion" id="id_nombre">
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text"><label for="id_contraseña">Contraseña:</label></span>
-                    <input class="form-control" type="text" name="contraseña" id="id_contraseña">
+                    <input class="form-control" type="text" name="pass_sesion" id="id_contraseña">
                 </div>  
                 <div class="container text-center">
                     <button type="submit" name="btn1" class="btn btn-success mb-3">Registrar</button>
