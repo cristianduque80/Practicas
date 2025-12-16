@@ -29,13 +29,14 @@
                 <?php
                     session_start();
                     ob_start();
+                    echo $_SESSION['estado_user'];
                     if($_SESSION['estado_user']==2){
                         echo"
-                            <h1>USUARIO NO ENCONTRADO</h1>
+                            <script>alert('USUARIO NO ENCONTRADO');</script>
                         ";
                     }elseif($_SESSION['estado_user']==3){
                         echo"
-                            <h1>LLENE TODOS LOS CAMPOS</h1>
+                            <script>alert('RELLENE LOS CAMPOS SOLICITADOS');</script>
                         ";
                     }
                 ?>
