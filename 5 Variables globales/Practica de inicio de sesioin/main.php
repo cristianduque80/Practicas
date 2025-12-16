@@ -12,7 +12,7 @@
     <div id="form_sesion">
         <h4 class="mt-3">Inicio</h4>
         <div id="form_usuario" class="mb-4">
-            <form action="validacion_user.php" method="post">
+            <form action="validacion_usuario.php" method="post">
                 <div id="form_id" class="input-group-sm mb-2">
                     <label for="id_usario"><b>Usuario</b></label>
                     <input class="form-control" type="text" name="usuario" id="id_usario">
@@ -21,14 +21,33 @@
                     <label for="id_pass"><b>Contraseña</b></label>
                     <input class="form-control" type="password" name="contraseña" id="id_pass">
                 </div>
-                <div id="form_pass" class="container text-center">
-                    <button class="btn btn-success" type="submit">Enviar</button>
+                <div id="form_buttons" class="container text-center">
+                    <button name="btn1" class="btn btn-success" type="submit">Enviar</button>
+                    <button name="btn2" class="btn btn-danger" type="reset">Eliminar</button>
+                </div>
+                <div id="form_mensaje" class="text-center">
+                <?php
+                    session_start();
+                    ob_start();
+                    if($_SESSION['estado_user']==2){
+                        echo"
+                            <h1>USUARIO NO ENCONTRADO</h1>
+                        ";
+                    }elseif($_SESSION['estado_user']==3){
+                        echo"
+                            <h1>LLENE TODOS LOS CAMPOS</h1>
+                        ";
+                    }
+                ?>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
 </body>
+
+
 </html>
 
 </body>
