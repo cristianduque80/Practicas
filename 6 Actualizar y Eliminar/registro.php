@@ -2,15 +2,15 @@
     //Conexion db
     include("conexion_on.php");
 
-///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //----------------1.-Funcion de incersion de datos
-///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     if(isset($_POST['btn2'])){
         //Comprobacion de los campos (inputs)
         if(strlen($_POST['nombre'])<=0 || strlen($_POST['apellido'])<=0 || strlen($_POST['cedula'])<=0 || strlen($_POST['telefono'])<=0){
             echo "
                 <div class=\"container-lg text-center\" style=\"\">   
-                    ---RELLENE LOS CAMPOS FALTANTES---                       
+                    ---Rellene los campos faltantes---                       
                 </div>
             ";
         }else{
@@ -37,9 +37,9 @@
     }  
    
         
-////////////////////////////////////////////////////////////////////////////   
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
 //----------------2.-Funcion de consulta de datos
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     if(isset($_POST['btn3'])){
         //Comprobacion del campo (inputs)
         if(strlen($_POST['cedula'])<=0){
@@ -88,81 +88,11 @@
         }
     }
 
-///////////////////////////////////////////////////////////////////////////    
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
 //----------------3.- Funcion para volver al inicio de sesion
-///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     if(isset($_POST['btn4'])){
         header("location:main.php");
     }
 
-/////////////////////////////////////////////////////////////////////////// 
-//----------------4.- Funcion para actualizar datos
-///////////////////////////////////////////////////////////////////////////
-    if(isset($_POST['btn5'])){
-        if(strlen($_POST['cedula'])==0 || strlen($_POST['nombre'])==0 || strlen($_POST['apellido'])==0 || strlen($_POST['telefono'])==0){
-            echo"<div class=\"container-lg text-center\" style=\"\">   
-                    ---INTRODUZCA LOS VALORES PARA LA ACTUALIZACION---                       
-                    </div>";
-        }else{
-            $cedula=$_POST['cedula'];
-            $consulta=mysqli_query($conex,"SELECT * FROM $table2 WHERE cedula='$cedula'");
-            $i=0;
-            while($dato_consultado=mysqli_fetch_array($consulta)){
-                $i++;
-            }
-            if($i==0){
-                echo "<div class=\"container-lg text-center\" style=\"\">   
-                    ---USUARIO NO ENCONTRADO---                       
-                    </div>";
-            }else{
-                $cedula=$_POST['cedula'];
-                $nombre=$_POST['nombre'];
-                $apellido=$_POST['apellido'];
-                $telefono=$_POST['telefono'];
-
-                $_UPDATE="UPDATE $table2 SET cedula='$cedula', nombre='$nombre', apellido='$apellido', telefono='$telefono' WHERE cedula='$cedula'";
-                $estado=mysqli_query($conex,$_UPDATE);
-
-                if($estado){
-                    echo "<div class=\"container-lg text-center\" style=\"\">   
-                    ---DATOS ACTUALIZADOS CORRECTAMENTE---                       
-                    </div>";
-                }
-
-            }
-        }
-    }
     
-///////////////////////////////////////////////////////////////////////////    
-//----------------5.- Funcion para eliminar datos
-///////////////////////////////////////////////////////////////////////////
-    if(isset($_POST['btn6'])){
-        if(strlen($_POST['cedula'])<=0){
-            echo "<div class=\"container-lg text-center\" style=\"\">   
-                    ---INTRODUZCA EL USUARIO (CEDULA) QUE DESEA ELIMINAR---                       
-                    </div>";
-        }else{
-            $cedula=$_POST['cedula'];
-            $consulta=mysqli_query($conex,"SELECT * FROM $table2 WHERE cedula='$cedula'");
-            $i=0;
-            while($dato_consultado=mysqli_fetch_array($consulta)){
-                $i++;
-            }
-            if($i==0){
-                echo "<div class=\"container-lg text-center\" style=\"\">   
-                    ---USUARIO NO ENCONTRADO---                       
-                    </div>";
-            }else{
-                $_DELETE="DELETE FROM $table2 WHERE cedula='$cedula'";
-                $estado=mysqli_query($conex,$_DELETE);
-                if($estado){
-                echo "<div class=\"container-lg text-center\" style=\"\">   
-                    ---DATOS ELIMININADOS SATISFACTORIAMENTE-                       
-                    </div>";
-                }
-            }
-
-            
-        }
-            
-    }   

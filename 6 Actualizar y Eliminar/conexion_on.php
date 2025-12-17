@@ -1,7 +1,7 @@
 <?php
 $host_db="localhost";
 $user_db="root";
-$pass_db="12345";
+$pass_db="";
 $db="practica_6";
 
 $table1="usuario";
