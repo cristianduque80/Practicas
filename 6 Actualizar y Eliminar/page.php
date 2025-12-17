@@ -7,8 +7,6 @@
     <title>Fomulario</title>
 </head>
 <body>
-    
-
     <div class="container-lg ">
         <center><h1 class="display-3">Formulario</h1></center>
         <div class="row">
@@ -33,7 +31,8 @@
                         <button type="submit" name="btn2" class="btn btn-success">Enviar</button>
                         <button type="submit" name="btn3" class="btn btn-primary">Consultar</button>
                         <button type="submit" name="btn5" class="btn btn-warning">Actualizar</button> 
-                        <button type="submit" name="btn4" class="btn btn-danger">Regresar</button>
+                        <button type="submit" name="btn6" class="btn btn-danger">Eliminar</button>
+                        <button type="submit" name="btn4" class="btn btn-secondary">Regresar</button>
                     </div>
                 </form>
                 <?php
