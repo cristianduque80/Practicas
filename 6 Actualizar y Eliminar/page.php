@@ -32,8 +32,9 @@
                     <div class="container text-center mb-2">
                         <button type="submit" name="btn2" class="btn btn-success">Enviar</button>
                         <button type="submit" name="btn3" class="btn btn-primary">Consultar</button>
-                        <button type="submit" name="btn5" class="btn btn-warning">Actualizar</button> 
-                        <button type="submit" name="btn4" class="btn btn-danger">Regresar</button>
+                        <button type="submit" name="btn5" class="btn btn-warning">Actualizar</button>
+                        <button type="submit" name="btn6" class="btn btn-danger">Eliminar</button> 
+                        <button type="submit" name="btn4" class="btn btn-secondary">Regresar</button>
                     </div>
                 </form>
                 <?php
