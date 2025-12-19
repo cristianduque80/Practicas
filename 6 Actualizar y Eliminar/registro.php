@@ -43,7 +43,6 @@
     if(isset($_POST['btn3'])){
         //Comprobacion del campo (inputs)
         if(strlen($_POST['cedula'])<=0){
-            $cedula=$_POST['cedula'];
             $consulta=mysqli_query($conex,"SELECT * FROM $table2");
             while($dato_consultado=mysqli_fetch_array($consulta)){
                 echo "
