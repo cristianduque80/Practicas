@@ -48,32 +48,6 @@
   function button_list(user){
     var list={
       "type_user":user,
-<<<<<<< HEAD
-=======
-      "function_type":1,
-    };
-
-    $.ajax({
-      data: list,
-      url: 'codigoPHP.php',
-      type: 'POST',
-
-      beforesend: function(){
-        $('#list').html("Mensaje antes de Enviar");
-      },
-
-      success: function(mensaje){
-        $('#list').html(mensaje);
-      }
-    });
-  }
-
-function search_list(){
-    search=document.getElementByID("id_search").value
-    var list={
-      "search"=search,
-      "function_type":2,
->>>>>>> f1c478dc522b693b7ef67922ba5562cf72cf5df4
     };
 
     $.ajax({
